@@ -20,11 +20,10 @@ Input: [4, 5, 7, 8, 6, 9]
 Output: [6, 8, 4]
 */
 
-let arr = [4, 5, 7, 8, 6, 9];
-function getEvenReverse(arr) {
-  return arr.filter((num) => num % 2 == 0).reverse();
-}
-console.log(getEvenReverse(arr));
+// function getEvenReverse(arr) {
+//   return arr.filter((num) => num % 2 == 0).reverse();
+// }
+// console.log(getEvenReverse(arr));
 
 /* 
 Array3. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlarini quyidagicha chiqaruvchi programma tuzilsin.
@@ -32,3 +31,23 @@ A[0], A[n-1], A[1], A[n-2], A[2], A[n-3],...
 Input:  [4, 5, 7, 8, 6, 9]
 Output: 4, 9, 5, 6, 7, 8, 8, 7, 6, 5, 9, 4
 */
+
+let arr = [4, 5, 7, 8, 6, 9];
+let n = arr.length;
+let res = "";
+let res2 = "";
+
+function arrIndex() {
+  for (let i = 0; i < Math.ceil(n / 2); i++) {
+    res += arr[i] + ", ";
+    if (i !== n - 1 - i) {
+      res += arr[n - 1 - i] + ", ";
+    }
+  }
+  for (let i = n - 3; i >= 0; i--) {
+    res2 += arr[n - 1 - i] + ", ";
+  }
+}
+
+arrIndex();
+console.log(res, res2);
