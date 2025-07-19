@@ -220,3 +220,50 @@ Array6. n ta elementdan tashkil topgan massiv berilgan (n juft son). Massiv elem
 //   console.log(result);
 // }
 // evenIndex();
+
+/* 
+Array7. n ta elementdan tashkil topgan massiv berilgan (n juft son). Massiv elementlari orasidan quyidagilarini chiqaruvchi programma tuzilsin. A[n-1], A[n-3], ... A[1]. Shart operatori ishlatilmasin.
+*/
+
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+
+// function oldNum() {
+//   const result = arr.filter((num, index) => index % 2 == 1).reverse();
+//   console.log(result.join("-"));
+// }
+// oldNum();
+
+/*
+
+Array8. n ta elementdan tashkil topgan massiv berilgan. Dastlab massiv elementlari orasidan juft indekslilarini keyin toq indekslilarini chiqaruvchi programma tuzilsin.
+A[0], A[2], A[4], ... A[1], A[3], A[5],.... Shart operatori ishlatilmasin.
+
+*/
+
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+
+// function evenOldIndex() {
+//   const evenNum = arr.filter((num, index) => index % 2 == 0);
+//   const oldNum = arr.filter((num, index) => index % 2 == 1);
+//   const result = evenNum.concat(oldNum);
+//   result.forEach((num, index) => console.log(`${num} [${arr.indexOf(num)}]`));
+// }
+// evenOldIndex();
+
+/*
+Array9. n ta elementdan tashkil topgan massiv berilgan (n juft son). Dastlab massiv elementlari orasidan toq indekslilarini o'shish tartibida keyin juft indekslilarini kamayish tartibida chiqaruvchi programma tuzilsin. A[1], A[3], A[5],.. A[6], A[4], A[2], A[0]. Shart operatori ishlatilmasin.
+*/
+
+let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+
+function evenOldIndex() {
+  const oldIndex = arr
+    .filter((num, index) => index % 2 === 1)
+    .sort((num1, num2) => num1 - num2);
+  const evenIndex = arr
+    .filter((num, index) => index % 2 === 0)
+    .sort((num2, num1) => num1 - num2);
+  const allNum = oldIndex.concat(evenIndex);
+  allNum.forEach((num, index) => console.log(`${num} [${arr.indexOf(num)}] `));
+}
+evenOldIndex();
