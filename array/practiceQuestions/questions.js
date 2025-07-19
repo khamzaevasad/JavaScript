@@ -254,16 +254,119 @@ A[0], A[2], A[4], ... A[1], A[3], A[5],.... Shart operatori ishlatilmasin.
 Array9. n ta elementdan tashkil topgan massiv berilgan (n juft son). Dastlab massiv elementlari orasidan toq indekslilarini o'shish tartibida keyin juft indekslilarini kamayish tartibida chiqaruvchi programma tuzilsin. A[1], A[3], A[5],.. A[6], A[4], A[2], A[0]. Shart operatori ishlatilmasin.
 */
 
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+
+// function evenOldIndex() {
+//   const oldIndex = arr
+//     .filter((num, index) => index % 2 === 1)
+//     .sort((num1, num2) => num1 - num2);
+//   const evenIndex = arr
+//     .filter((num, index) => index % 2 === 0)
+//     .sort((num2, num1) => num1 - num2);
+//   const allNum = oldIndex.concat(evenIndex);
+//   allNum.forEach((num, index) => console.log(`${num} [${arr.indexOf(num)}] `));
+// }
+// evenOldIndex();
+
+/*
+Array10. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlarini quyidagicha chiqaruvchi programma tuzilsin. A[0], A[1], A[n-1], A[n-2], A[2], A[3], A[n-3], A[n-4], 
+*/
+
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+
+// function startEnd() {
+//   let start = 0;
+//   let end = arr.length - 1;
+//   while (start < end) {
+//     console.log(arr[start]);
+//     console.log(arr[start + 1]);
+//     console.log(arr[end]);
+//     console.log(arr[end - 1]);
+
+//     start += 2;
+//     end -= 2;
+//   }
+// }
+// startEnd();
+
+/*
+Array11. N ta elementdan tashkil topgan arr nomli massiv va K, L butun sonlari berilgan. (0 <= K <= L < N). Massivning K va L indekslari orasidagi elementlaridan tashqari elementlari yig'indisini qaytaruvchi rangeOutSum(arr) nomli funksiya tuzilsin.
+*/
+
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+// let k = 2;
+// let l = 5;
+// function rangeOutSum() {
+//   let count = 0;
+//   arr.forEach((num, index) => {
+//     if (index < k || index > l) {
+//       count += num;
+//     }
+//   });
+//   console.log(count);
+// }
+// rangeOutSum();
+
+/*
+Array12. Massivga kiritilgan qiymatlardan truthy va falsy elementlaridan iborat alohida 2 ta massiv hosil qiling.
+Input: [10, false, “”, “Abdulaziz”, null]
+Output:
+Truthy: [10, “Abdulaziz”]
+Falsy: [false, “”, null]
+
+*/
+
+// let arrList = [10, false, "", "Abdulaziz", null];
+
+// let truthy = [];
+// let falsy = [];
+// function truthyFalsy() {
+//   arrList.forEach((val) => {
+//     if (val) {
+//       truthy.push(val);
+//     } else {
+//       falsy.push(val);
+//     }
+//   });
+// }
+// truthyFalsy();
+// console.log(truthy, falsy);
+
+/* 
+Array13. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv juft indeksli elementlari orasidan kichigini aniqlovchi getOddMin(arr) nomli funksiya tuzilsin.
+*/
+
+/* 
+Array14. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv toq indeksli elementlari orasidan kattasini aniqlovchi getEvenMax(arr) tuzilsin.
+*/
+
 let arr = [10, 20, 30, 40, 50, 60, 70, 80];
 
-function evenOldIndex() {
-  const oldIndex = arr
-    .filter((num, index) => index % 2 === 1)
-    .sort((num1, num2) => num1 - num2);
-  const evenIndex = arr
-    .filter((num, index) => index % 2 === 0)
-    .sort((num2, num1) => num1 - num2);
-  const allNum = oldIndex.concat(evenIndex);
-  allNum.forEach((num, index) => console.log(`${num} [${arr.indexOf(num)}] `));
+// function getOddMin() {
+//   const evenIndex = arr.filter((evenNum, index) => index % 2 === 0);
+
+//   let min = evenIndex[0];
+
+//   evenIndex.forEach((item) => {
+//     if (item < min) {
+//       min = item;
+//     }
+//   });
+
+//   console.log(min);
+// }
+// getOddMin();
+
+function getEvenMax() {
+  const eventIndex = arr.filter((num, index) => index % 2 === 1);
+  let maxNdx = eventIndex[0];
+
+  eventIndex.forEach((num) => {
+    if (num > maxNdx) {
+      maxNdx = num;
+    }
+  });
+
+  console.log(maxNdx);
 }
-evenOldIndex();
+getEvenMax();
