@@ -340,7 +340,7 @@ Array13. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv juft i
 Array14. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv toq indeksli elementlari orasidan kattasini aniqlovchi getEvenMax(arr) tuzilsin.
 */
 
-let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
 
 // function getOddMin() {
 //   const evenIndex = arr.filter((evenNum, index) => index % 2 === 0);
@@ -357,16 +357,16 @@ let arr = [10, 20, 30, 40, 50, 60, 70, 80];
 // }
 // getOddMin();
 
-function getEvenMax() {
-  const eventIndex = arr.filter((num, index) => index % 2 === 1);
-  let maxNdx = eventIndex[0];
+// function getEvenMax() {
+//   const eventIndex = arr.filter((num, index) => index % 2 === 1);
+//   let maxNdx = eventIndex[0];
 
-  eventIndex.forEach((num) => {
-    if (num > maxNdx) {
-      maxNdx = num;
-    }
-  });
+//   eventIndex.forEach((num) => {
+//     if (num > maxNdx) {
+//       maxNdx = num;
+//     }
+//   });
 
-  console.log(maxNdx);
-}
-getEvenMax();
+//   console.log(maxNdx);
+// }
+// getEvenMax();
