@@ -385,7 +385,7 @@ Array13. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv juft i
 Array14. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv toq indeksli elementlari orasidan kattasini aniqlovchi getEvenMax(arr) tuzilsin.
 */
 
-let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
 
 // function getOddMin() {
 //   const evenIndex = arr.filter((evenNum, index) => index % 2 === 0);
@@ -429,13 +429,57 @@ Output: 54
 
 */
 
-const about = [
-  { name: "John", age: 13 },
-  { name: "Mark", age: 56 },
-  { name: "Rachel", age: 45 },
-  { name: "Nate", age: 67 },
-  { name: "Jeniffer", age: 65 },
+// const about = [
+//   { name: "John", age: 13 },
+//   { name: "Mark", age: 56 },
+//   { name: "Rachel", age: 45 },
+//   { name: "Nate", age: 67 },
+//   { name: "Jeniffer", age: 65 },
+// ];
+
+// const result = about.sort((a, b) => b.age - a.age);
+// console.log(result[0].age - result[result.length - 1].age);
+
+//Masala nomi: "Birinchi takroriy sonni toping"
+
+// const numbers = [2, 4, 3, 5, 7, 4, 9, 2];
+
+// function findFirstDuplicate(arr) {
+//   let seen = new Set();
+//   for (let i = 0; i < arr.length; i++) {
+//     if (seen.has(arr[i])) {
+//       return arr[i]; // bu son allaqachon ko‘rilgan => bu takroriy son
+//     }
+//     seen.add(arr[i]); // bu yangi son => saqlab qo‘yamiz
+//   }
+// }
+// console.log(findFirstDuplicate(numbers));
+
+/* 
+1.  Bahosi 5, 4, 3 bo’lgan o’quvchilarni ismlaridan iborat massiv qaytaruvchi getNamesByGrade(students, grade) funksiya tuzing. (map, filter)
+5 baho - (85 - 100)
+4 baho - (70 - 85)
+3 baho – (60 - 70)
+
+*/
+
+const students = [
+  { name: "Quincy", percent: 96 },
+  { name: "Jason", percent: 84 },
+  { name: "Alexis", percent: 100 },
+  { name: "Sam", percent: 65 },
+  { name: "Katie", percent: 90 },
+  { name: "Anna", percent: 75 },
 ];
 
-const result = about.sort((a, b) => b.age - a.age);
-console.log(result[0].age - result[result.length - 1].age);
+const studentGrade = students.map((student) => {
+  if (student.percent <= 100 && student.percent >= 85) {
+    return { ...student, grade: 5 };
+  } else if (student.percent <= 85 && student.percent >= 70) {
+    return { ...student, grade: 4 };
+  } else if (student.percent <= 70 && student.percent >= 60) {
+    return { ...student, grade: 3 };
+  }
+});
+
+console.log(studentGrade);
