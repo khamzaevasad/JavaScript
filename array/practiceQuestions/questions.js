@@ -33,6 +33,12 @@ Output: 4, 9, 5, 6, 7, 8, 8, 7, 6, 5, 9, 4
 */
 
 // let arr = [4, 5, 7, 8, 6, 9];
+// let res = [];
+// for (let i = 0; i < arr.length; i++) {
+//   res.push(arr[i], arr[arr.length - i - 1]);
+// }
+// console.log(res.join(","));
+
 // let n = arr.length;
 // let res = "";
 // let res2 = "";
@@ -70,9 +76,10 @@ Ouput: rangeSum(arr, 2, 5) => 32
 //       count += item;
 //     }
 //   });
-//   console.log(`arr, ${k}, ${l} => ${count}`);
+//   return count;
 // }
-// rangeSum();
+
+// console.log(rangeSum());
 
 /* 
 Array5. n ta elementdan tashkil topgan massiv berilgan. Massivda qatnashgan sonlardan faqat bittadan chiqaruvchi getSingleArr(arr) tuzilsin.
@@ -81,6 +88,8 @@ Output: [7, 4, 2, 3, 1, 5]
 */
 
 // let arr = [7, 4, 2, 3, 1, 4, 5, 2, 4, 5, 7];
+
+// console.log(new Set([...arr]));
 
 // function getSingleArr() {
 //   let resArr = [];
@@ -116,9 +125,9 @@ Min: 1
 //       max_val = num;
 //     }
 //   });
-//   console.log(`max val ${max_val} min val ${min_val}`);
+//   return `max val ${max_val} min val ${min_val}`;
 // }
-// count();
+// console.log(count());
 
 /*
 
@@ -163,6 +172,29 @@ Output: [2, 3, 5, 10, 20]
 
 */
 
+// let arr = [2, 3];
+// let n = 5;
+// let a = 2;
+// let b = 3;
+
+// for (let i = 2; i < n; i++) {
+//   let sum = 0;
+//   for (let j = 0; j < i; j++) {
+//     sum += arr[j];
+//   }
+//   arr.push(sum);
+// }
+
+// console.log(arr);
+
+// let newArr = [a, b];
+// let count = a + b;
+
+// newArr.forEach((num) => {
+//   count += num;
+// });
+// console.log(count);
+
 /*
 Array3. n ta elementdan tashkil topgan massiv berilgan. Uning elementlarini teskari tartibda chiqaruvchi programma tuzilsin.
 */
@@ -170,6 +202,10 @@ Array3. n ta elementdan tashkil topgan massiv berilgan. Uning elementlarini tesk
 // let arr = [1, 2, 3, 4, 5, 6];
 
 // function reverse() {
+//   for (let i = arr.length - 1; i >= 0; i--) {
+//     console.log(arr[i]);
+//   }
+
 //   console.log([...arr].reverse());
 // }
 // reverse();
@@ -185,7 +221,7 @@ Natija: 5 7 9 toqlar soni = 3
 // function oldNum() {
 //   const arrList = arr.filter((num) => num % 2 == 1);
 
-//   console.log(`Natija ${arrList.join(" ")} toqlar soni 3`);
+//   console.log(`Natija ${arrList.join(" ")} toqlar soni ${arrList.length}`);
 // }
 // oldNum();
 
@@ -274,6 +310,15 @@ Array10. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlarini qu
 
 // let arr = [10, 20, 30, 40, 50, 60, 70, 80];
 
+// for (let i = 0; i < arr.length - 1; i++) {
+//   console.log(
+//     arr[i],
+//     arr[i + 1],
+//     arr[arr.length - i - 1],
+//     arr[arr.length - i - 2]
+//   );
+// }
+
 // function startEnd() {
 //   let start = 0;
 //   let end = arr.length - 1;
@@ -340,7 +385,7 @@ Array13. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv juft i
 Array14. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv toq indeksli elementlari orasidan kattasini aniqlovchi getEvenMax(arr) tuzilsin.
 */
 
-// let arr = [10, 20, 30, 40, 50, 60, 70, 80];
+let arr = [10, 20, 30, 40, 50, 60, 70, 80];
 
 // function getOddMin() {
 //   const evenIndex = arr.filter((evenNum, index) => index % 2 === 0);
@@ -370,3 +415,27 @@ Array14. n ta elementdan tashkil topgan arr nomli massiv berilgan. Massiv toq in
 //   console.log(maxNdx);
 // }
 // getEvenMax();
+
+/* 
+  Massivdagi eng yosh va eng qarilarni topib, ularni yoshlarini farqini toping. (sort).
+Input: [
+{name: 'John', age: 13},
+{name: 'Mark', age: 56},
+{name: 'Rachel', age: 45},
+{name: 'Nate', age: 67},
+{name: 'Jeniffer', age: 65}
+];
+Output: 54
+
+*/
+
+const about = [
+  { name: "John", age: 13 },
+  { name: "Mark", age: 56 },
+  { name: "Rachel", age: 45 },
+  { name: "Nate", age: 67 },
+  { name: "Jeniffer", age: 65 },
+];
+
+const result = about.sort((a, b) => b.age - a.age);
+console.log(result[0].age - result[result.length - 1].age);
