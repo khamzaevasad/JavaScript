@@ -456,6 +456,101 @@ Output: 54
 // console.log(findFirstDuplicate(numbers));
 
 /* 
+Array15. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari orasidan oxirgi lokal maksimum elementi indeksini chiqaruvchi programma tuzilsin. Lokal maksimum - o'ng va chap qo'shinisidan katta bo'lgan element.
+*/
+
+// const numbers = [2, 4, 3, 5, 7, 4, 9, 2];
+// const localMax = [];
+// for (let i = 0; i < numbers.length; i++) {
+//   if (numbers[i] > numbers[i - 1] && numbers[i] > numbers[i + 1]) {
+//     localMax.push(numbers.lastIndexOf(numbers[i]));
+//   }
+// }
+// const localMaxIndex = localMax.pop();
+// console.log(localMaxIndex);
+
+/* 
+Array16. n ta elementdan tashkil topgan massiv va R butun soni berilgan. Massiv elementlari orasidan R soniga eng yaqin sonni topuvchi programma tuzilsin.
+*/
+// const numbers = [2, 4, 3, 5, 7, 4, 9, 2];
+// const r = 10;
+// let minDiff = Infinity;
+// let closest = null;
+
+// for (let i = 0; i < numbers.length; i++) {
+//   let minVal = Math.abs(r - numbers[i]);
+//   if (minVal < minDiff) {
+//     minDiff = minVal;
+//     closest = numbers[i];
+//   }
+// }
+// console.log(closest);
+
+/*
+Array17. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari orasidan yig'indisi eng katta bo'ladigan 2 ta qo'shni elementni chiqaruvchi programma tuzilsin.
+*/
+
+// const numbers = [2, 4, 3, 5, 7, 4, 9, 2];
+// let maxSum = numbers[0] + numbers[1];
+// let first = numbers[0];
+// let second = numbers[1];
+
+// for (let i = 0; i < numbers.length - 1; i++) {
+//   let sum = numbers[i] + numbers[i + 1];
+
+//   if (sum > maxSum) {
+//     maxSum = sum;
+//     first = numbers[i];
+//     second = numbers[i + 1];
+//   }
+// }
+
+// console.log(maxSum);
+
+/* 
+Array18. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari orasida aniq 2 ta bir xil qiymatli element bor. Shu bir xil qiymatli elementlar indeksini chiqaruvchi programma tuzilsin.
+*/
+
+// const numbers = [2, 4, 3, 5, 7, 6, 9, 2];
+// const value = 2;
+
+// const firstIdx = numbers.indexOf(value);
+// const secondIdx = numbers.lastIndexOf(value);
+// console.log(firstIdx, secondIdx);
+
+/*
+Array19. n ta elementdan tashkil topgan massiv berilgan. Massivda eng ko'p qatnashgan bir xil qiymatli elementni va uning sonini chiqaruvchi programma tuzilsin.
+*/
+
+/*
+Array20. n ta elementdan iborat butun sonlardan tashkil topgan a massiv berilgan. a massivning juft elementlaridan tashkil topgan b massivini hosil qiling. b massiv elementlari soni va elementlari chiqarilsin.
+ */
+
+// const a = [3, 6, 9, 12, 15, 18, 21, 24];
+// const b = a.filter((num) => num % 2 === 0);
+// console.log(b, b.length);
+
+/* 
+ nta butun sonlardan iborat a massiv va k butun soni berilgan. Massivning har bir elementini k ga orttiruvchi programma tuzilsin.
+*/
+
+// const a = [2, 5, 7];
+// const k = 3;
+// const res = a.map((num) => {
+//   return num + k;
+// });
+// console.log(res);
+
+/*
+Array22. n ta elementdan iborat massiv berilgan (n juft son). Massivning birinchi yarmi va ikkinchi yarmi qiymatlari almashtirilsin. 
+*/
+// const arr = [1, 2, 3, 4, 5, 6];
+// const leftArr = arr.slice(0, 3);
+// const rightArr = arr.slice(3);
+// console.log(rightArr.concat(leftArr));
+
+/* 
+
 1.  Bahosi 5, 4, 3 bo’lgan o’quvchilarni ismlaridan iborat massiv qaytaruvchi getNamesByGrade(students, grade) funksiya tuzing. (map, filter)
 5 baho - (85 - 100)
 4 baho - (70 - 85)
@@ -463,23 +558,23 @@ Output: 54
 
 */
 
-const students = [
-  { name: "Quincy", percent: 96 },
-  { name: "Jason", percent: 84 },
-  { name: "Alexis", percent: 100 },
-  { name: "Sam", percent: 65 },
-  { name: "Katie", percent: 90 },
-  { name: "Anna", percent: 75 },
-];
+// const students = [
+//   { name: "Quincy", percent: 96 },
+//   { name: "Jason", percent: 84 },
+//   { name: "Alexis", percent: 100 },
+//   { name: "Sam", percent: 65 },
+//   { name: "Katie", percent: 90 },
+//   { name: "Anna", percent: 75 },
+// ];
 
-const studentGrade = students.map((student) => {
-  if (student.percent <= 100 && student.percent >= 85) {
-    return { ...student, grade: 5 };
-  } else if (student.percent <= 85 && student.percent >= 70) {
-    return { ...student, grade: 4 };
-  } else if (student.percent <= 70 && student.percent >= 60) {
-    return { ...student, grade: 3 };
-  }
-});
+// const studentGrade = students.map((student) => {
+//   if (student.percent <= 100 && student.percent >= 85) {
+//     return { ...student, grade: 5 };
+//   } else if (student.percent <= 85 && student.percent >= 70) {
+//     return { ...student, grade: 4 };
+//   } else if (student.percent <= 70 && student.percent >= 60) {
+//     return { ...student, grade: 3 };
+//   }
+// });
 
-console.log(studentGrade);
+// console.log(studentGrade);
