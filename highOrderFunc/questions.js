@@ -1,3 +1,5 @@
+//Products massivini id, name, price, rating va discount bo'yicha sortlash; (sort)
+
 // berilgan string ichidagi har bir belgining chastotasini hisoblab, uni kamdan kam uchraydigan ko'proq uchraydiganiganiga qarab
 // tartiblab qaytarafigan funksiya yozing
 
