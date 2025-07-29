@@ -17,7 +17,17 @@ const getTodos = (resurse) => {
   });
 };
 
+//promise chaining example
+
 getTodos("./app.json")
+  .then((data) => {
+    console.log(data);
+    return getTodos("./data.json");
+  })
+  .then((data) => {
+    console.log(data);
+    return getTodos("./todos.json");
+  })
   .then((data) => {
     console.log(data);
   })
